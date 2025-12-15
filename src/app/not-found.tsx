@@ -95,7 +95,6 @@ export default function NotFound() {
                             {[
                                 { label: "Download", href: "/reminiscencia/download" },
                                 { label: "About", href: "/about" },
-                                { label: "Articles", href: "/articles" },
                                 { label: "DMCA", href: "/dmca" }
                             ].map((link, idx) => (
                                 <Link

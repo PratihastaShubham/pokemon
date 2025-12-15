@@ -8,15 +8,13 @@ export default function Footer() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
 
             <div className="container mx-auto max-w-[1200px] px-6 py-12">
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
+                {/* Mobile: Stacked & Centered, Desktop: 3-column grid */}
+                <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-3 md:gap-8 mb-8">
                     {/* Brand Section */}
-                    <div className="space-y-4">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    <div className="text-center md:text-left">
+                        <span className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent block">
                             Pokémon Reminiscencia
                         </span>
-                        <p className="text-sm text-gray-400">
-                            Your guide to the roguelike Pokémon adventure that reimagines what Pokémon could be.
-                        </p>
                     </div>
 
                     {/* Quick Links */}
@@ -26,9 +24,7 @@ export default function Footer() {
                             <Link href="/" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
                                 Home
                             </Link>
-                            <Link href="/articles" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
-                                Articles
-                            </Link>
+
                             <Link href="/reminiscencia/download" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
                                 Download
                             </Link>

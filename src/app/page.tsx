@@ -84,9 +84,9 @@ export default function ReminiscenciaPage() {
                                 Reminiscencia
                             </span>
                         </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 px-4">
+                        {/* <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 px-4">
                             A beautiful, challenging, story-driven roguelike adventure that reimagines what Pokémon could be.
-                        </p>
+                        </p> */}
                     </motion.div>
 
                     {/* CTA Buttons */}
@@ -478,22 +478,7 @@ export default function ReminiscenciaPage() {
                     viewport={{ once: true }}
                     className="mb-24"
                 >
-                    <div className="glass-card rounded-3xl p-10 md:p-16 relative overflow-hidden text-center border border-purple-500/30">
-                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-purple-500/20 to-transparent pointer-events-none" />
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white relative z-10">
-                            Ready to Start Your Adventure?
-                        </h2>
-                        <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto relative z-10">
-                            Download Pokémon Reminiscencia now and experience a bold reimagining of what Pokémon can be!
-                        </p>
-                        <Link
-                            href="/reminiscencia/download"
-                            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:shadow-[0_0_40px_rgba(192,132,252,0.6)] transition-all transform hover:scale-105 relative z-10"
-                        >
-                            <Download className="w-6 h-6" />
-                            Download Now - It's Free!
-                        </Link>
-                    </div>
+                   
                 </motion.section>
             </div>
         </>
