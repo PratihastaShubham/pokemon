@@ -7,8 +7,9 @@ import { useState } from 'react';
 const navLinks = [
     ['Home', '/'],
     ['Articles', '/articles'],
-    ['Download', '/download'],
-    ['About', '/about']
+    ['Download', '/reminiscencia/download'],
+    ['About', '/about'],
+    ['DMCA', '/dmca']
 ];
 
 export default function Header() {
@@ -27,7 +28,7 @@ export default function Header() {
                         {/* Logo/Title */}
                         <Link href="/" className="group flex items-center gap-2 hover:no-underline">
                             <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-pulse-glow group-hover:bg-right transition-all duration-500">
-                                Pokémon Scencia
+                                Pokémon Reminiscencia
                             </span>
                         </Link>
 
@@ -100,7 +101,7 @@ export default function Header() {
                                 {/* Decorative Elements */}
                                 <div className="mt-8 pt-6 border-t border-purple-900/30">
                                     <p className="text-xs text-gray-500 px-4">
-                                        © 2025 PokéGuide
+                                        © 2025 Pokémon Reminiscencia
                                     </p>
                                 </div>
                             </nav>

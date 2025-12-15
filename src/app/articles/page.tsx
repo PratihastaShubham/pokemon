@@ -1,82 +1,8 @@
 "use client";
-import ArticleCard from "@/components/ArticleCard";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
 import { motion } from "framer-motion";
-
-const articles = [
-    {
-        title: "Understanding Type Matchups",
-        description: "Master the fundamentals of Pokémon type effectiveness and learn how to predict and counter your opponents' moves in battle.",
-        href: "/articles/type-matchups",
-        category: "Basics",
-    },
-    {
-        title: "EV Training Explained",
-        description: "A complete guide to Effort Values (EVs), how they affect your Pokémon's stats, and the most efficient training methods available.",
-        href: "/articles/ev-training",
-        category: "Training",
-    },
-    {
-        title: "Best Starter Pokémon Ranked",
-        description: "An analysis of starter Pokémon across all generations, comparing their strengths, weaknesses, and competitive viability.",
-        href: "/articles/starter-pokemon",
-        category: "Analysis",
-    },
-    {
-        title: "Breeding for Perfect IVs",
-        description: "Learn the mechanics of Pokémon breeding and how to pass down IVs, natures, and egg moves to create competitive-ready Pokémon.",
-        href: "/articles/breeding-guide",
-        category: "Training",
-    },
-    {
-        title: "Competitive Team Building 101",
-        description: "Understand the basics of building a balanced competitive team, including role assignment, type coverage, and synergy.",
-        href: "/articles/team-building",
-        category: "Competitive",
-    },
-    {
-        title: "Hidden Abilities Guide",
-        description: "Discover what Hidden Abilities are, which Pokémon have them, and how to obtain them through various in-game methods.",
-        href: "/articles/hidden-abilities",
-        category: "Mechanics",
-    },
-    {
-        title: "Shiny Hunting Methods",
-        description: "A comprehensive overview of all shiny hunting methods across different Pokémon games, including odds and strategies.",
-        href: "/articles/shiny-hunting",
-        category: "Collecting",
-    },
-    {
-        title: "Understanding Weather in Battles",
-        description: "Learn how weather conditions affect battles, which abilities trigger them, and how to build weather-based teams.",
-        href: "/articles/weather-battles",
-        category: "Competitive",
-    },
-    {
-        title: "Legendary Pokémon Locations",
-        description: "Find every legendary Pokémon across all main series games with our comprehensive location and capture guide.",
-        href: "/articles/legendary-locations",
-        category: "Guides",
-    },
-];
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.1
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-        y: 0,
-        opacity: 1
-    }
-};
+import { BookOpen, ArrowRight, Star, Zap, Heart } from "lucide-react";
+import Image from "next/image";
 
 export default function ArticlesPage() {
     return (
@@ -89,62 +15,148 @@ export default function ArticlesPage() {
                 className="mb-12 sm:mb-16 text-center"
             >
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 px-4">
-                    <span className="text-gradient">Articles & Guides</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600">
+                        Featured Article
+                    </span>
                 </h1>
                 <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
-                    Explore our collection of detailed Pokémon articles and tutorials.
-                    Whether you&apos;re new to Pokémon or a seasoned veteran, our guides cover
-                    everything from basic mechanics to advanced competitive strategies.
+                    Discover the story-driven roguelike that's reimagining Pokémon
                 </p>
             </motion.section>
 
-            {/* Articles Grid */}
-            <section className="mb-20">
-                <SectionHeading
-                    title="All Articles"
-                    subtitle="Browse our complete collection of guides and tutorials."
-                />
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-                >
-                    {articles.map((article, index) => (
-                        <motion.div key={index} variants={itemVariants}>
-                            <ArticleCard
-                                title={article.title}
-                                description={article.description}
-                                href={article.href}
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </section>
+            {/* Featured Article Card */}
+            <motion.section
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="mb-16"
+            >
+                <Link href="/" className="block group">
+                    <div className="glass-card rounded-3xl overflow-hidden border border-purple-500/30 hover:border-purple-500/60 transition-all duration-500 hover:shadow-[0_0_50px_rgba(168,85,247,0.3)] transform hover:scale-[1.02]">
+                        {/* Article Header with Gradient Background */}
+                        <div className="relative h-64 sm:h-80 bg-gradient-to-br from-purple-900/40 via-pink-900/40 to-purple-900/40 overflow-hidden">
+                            {/* Animated background glow */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-blue-500/20 animate-pulse"></div>
 
-            {/* Request Section */}
+                            {/* Floating icons decoration */}
+                            <motion.div
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute top-8 right-8 p-4 bg-purple-500/20 rounded-full backdrop-blur-sm"
+                            >
+                                <Star className="w-8 h-8 text-purple-300" />
+                            </motion.div>
+
+                            {/* Content overlay */}
+                            <div className="absolute inset-0 flex items-center justify-center p-8 text-center">
+                                <div>
+                                    <motion.div
+                                        initial={{ scale: 0.8, opacity: 0 }}
+                                        animate={{ scale: 1, opacity: 1 }}
+                                        transition={{ delay: 0.4, duration: 0.6 }}
+                                        className="inline-block p-4 bg-purple-500/30 rounded-full mb-4 backdrop-blur-sm"
+                                    >
+                                        <BookOpen className="w-12 h-12 text-white" />
+                                    </motion.div>
+                                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3">
+                                        Pokémon Reminiscencia
+                                    </h2>
+                                    <p className="text-purple-200 text-lg sm:text-xl font-medium">
+                                        A Beautiful, Challenging, Story-Driven Fan Adventure
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Article Content */}
+                        <div className="p-8 sm:p-10">
+                            {/* Tags */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                                    Featured
+                                </span>
+                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30">
+                                    Roguelike
+                                </span>
+                                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                                    Fan Game
+                                </span>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+                                Pokémon Reminiscencia throws the classic Pokémon formula out the window—and somehow makes it better. This critically acclaimed fan game replaces the familiar League structure with a deeply narrative, roguelike-inspired experience featuring stunning custom pixel art and surprisingly emotional storytelling.
+                            </p>
+
+                            {/* Key Features */}
+                            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                                <div className="flex items-start gap-3 bg-purple-500/5 p-4 rounded-xl border border-purple-500/20">
+                                    <Zap className="w-5 h-5 text-purple-400 flex-shrink-0 mt-1" />
+                                    <div>
+                                        <p className="text-white font-semibold text-sm mb-1">No Grinding</p>
+                                        <p className="text-gray-400 text-xs">Heart Scale customization system</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3 bg-pink-500/5 p-4 rounded-xl border border-pink-500/20">
+                                    <Heart className="w-5 h-5 text-pink-400 flex-shrink-0 mt-1" />
+                                    <div>
+                                        <p className="text-white font-semibold text-sm mb-1">15+ Hours</p>
+                                        <p className="text-gray-400 text-xs">Character-driven story</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3 bg-blue-500/5 p-4 rounded-xl border border-blue-500/20">
+                                    <Star className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" />
+                                    <div>
+                                        <p className="text-white font-semibold text-sm mb-1">All Pokémon</p>
+                                        <p className="text-gray-400 text-xs">With custom animations</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Read More Button */}
+                            <div className="flex items-center justify-between">
+                                <div className="text-sm text-gray-500">
+                                    <span className="text-purple-400 font-semibold">Featured Article</span> • Full Story
+                                </div>
+                                <div className="flex items-center gap-2 text-purple-400 font-bold group-hover:text-purple-300 transition-colors">
+                                    <span>Read Full Article</span>
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            </motion.section>
+
+            {/* Additional Info Section */}
             <motion.section
                 initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="glass-card rounded-2xl p-10 text-center relative overflow-hidden"
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="glass-card rounded-2xl p-8 sm:p-10 text-center relative overflow-hidden"
             >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 blur-[80px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
 
-                <h2 className="text-2xl font-bold text-white mb-4">
-                    Can&apos;t Find What You&apos;re Looking For?
-                </h2>
-                <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-                    We&apos;re constantly adding new content based on community feedback. If there&apos;s
-                    a topic you&apos;d like us to cover, let us know!
-                </p>
-                <a
-                    href="/about"
-                    className="inline-block px-8 py-3 rounded-full border border-purple-500/30 text-purple-300 font-semibold hover:bg-purple-500/10 transition-colors"
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="relative z-10"
                 >
-                    Contact Us
-                </a>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                        Want to Experience It Yourself?
+                    </h2>
+                    <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+                        Pokémon Reminiscencia is now fully complete and available in English. Download it today and discover why it stands as one of the most polished and ambitious Pokémon fan games ever released.
+                    </p>
+                    <Link
+                        href="/reminiscencia/download"
+                        className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-bold hover:shadow-[0_0_40px_rgba(192,132,252,0.6)] transition-all transform hover:scale-105"
+                    >
+                        <span>Download Now</span>
+                        <ArrowRight className="w-5 h-5" />
+                    </Link>
+                </motion.div>
             </motion.section>
         </div>
     );
