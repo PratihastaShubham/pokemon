@@ -122,7 +122,7 @@ export default function AboutPage() {
                         <p className="text-gray-300 leading-relaxed mb-8 text-lg">
                             This site is your one-stop resource for everything Pokémon Reminiscencia. Whether you're new to the game or looking to dive deeper into its mechanics, we've got you covered:
                         </p>
-                        <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {[
                                 { title: "Game Overview", desc: "Detailed breakdowns of the story, characters, and what makes Reminiscencia special." },
                                 { title: "Download Resources", desc: "Safe, verified download links and step-by-step installation instructions." },

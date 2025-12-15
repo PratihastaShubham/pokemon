@@ -5,12 +5,59 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "Pokémon Reminiscencia - Roguelike Fan Adventure",
+  metadataBase: new URL('https://pokemonreminiscencia.site'),
+  title: {
+    default: "Pokémon Reminiscencia - Roguelike Fan Adventure",
+    template: "%s | Pokémon Reminiscencia"
+  },
   description: "Download Pokémon Reminiscencia - a beautiful, challenging, story-driven roguelike adventure. Get the complete game, installation help, and all the information you need.",
-  keywords: "pokemon, reminiscencia, roguelike, fan game, download, anthony, phione, pokemon essentials, fan-made game",
+  keywords: ["pokemon", "reminiscencia", "roguelike", "fan game", "download", "anthony", "phione", "pokemon essentials", "fan-made game", "pokemon fan game", "free pokemon game"],
+  authors: [{ name: "Pokémon Reminiscencia Team" }],
+  creator: "Pokémon Reminiscencia Team",
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://pokemonreminiscencia.site',
+    siteName: 'Pokémon Reminiscencia',
+    title: 'Pokémon Reminiscencia - Roguelike Fan Adventure',
+    description: 'Download Pokémon Reminiscencia - a beautiful, challenging, story-driven roguelike adventure free for Windows PC.',
+    images: [
+      {
+        url: '/screenies.gif',
+        width: 1200,
+        height: 675,
+        alt: 'Pokémon Reminiscencia Gameplay',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pokémon Reminiscencia - Roguelike Fan Adventure',
+    description: 'Download Pokémon Reminiscencia - a beautiful, challenging, story-driven roguelike adventure free for Windows PC.',
+    images: ['/screenies.gif'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here when you have them
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+  },
 };
 
 export default function RootLayout({

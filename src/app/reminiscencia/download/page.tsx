@@ -43,11 +43,11 @@ export default function ReminiscenciaDownloadPage() {
                     </div>
 
                     {/* Game Info */}
-                    <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                         <div className="bg-black/30 p-5 rounded-xl border border-white/10 text-center">
                             <HardDrive className="w-6 h-6 text-purple-400 mb-2 mx-auto" />
                             <p className="text-gray-400 text-sm mb-1">File Size</p>
-                            <p className="text-white font-bold">~500 MB - 1 GB</p>
+                            <p className="text-white font-bold">~ 500 MB</p>
                         </div>
                         <div className="bg-black/30 p-5 rounded-xl border border-white/10 text-center">
                             <Monitor className="w-6 h-6 text-pink-400 mb-2 mx-auto" />
@@ -217,7 +217,7 @@ export default function ReminiscenciaDownloadPage() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
                     System Requirements
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     <div className="glass-card p-8 rounded-2xl border border-green-500/20">
                         <h3 className="text-2xl font-bold text-green-300 mb-6 flex items-center gap-2">
                             <CheckCircle className="w-6 h-6" />

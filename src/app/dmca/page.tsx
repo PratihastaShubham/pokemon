@@ -182,7 +182,7 @@ export default function DMCAPage() {
                                 <div>
                                     <p className="text-white font-semibold mb-1">DMCA Agent:</p>
                                     <p className="text-gray-400 text-sm">Pokémon Reminiscencia Resource</p>
-                                    <p className="text-purple-400 text-sm">Email: dmca@reminiscencia.example</p>
+                                    <p className="text-purple-400 text-sm">Email: tonicnetprojects@gmail.com</p>
                                 </div>
                             </div>
                         </div>

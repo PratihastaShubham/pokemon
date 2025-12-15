@@ -99,3 +99,13 @@ img {
 body {
   -webkit-overflow-scrolling: touch;
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor scroll for fixed header */
+:target {
+  scroll-margin-top: 100px;
+}

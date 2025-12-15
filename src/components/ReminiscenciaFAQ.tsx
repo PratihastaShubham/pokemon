@@ -14,10 +14,10 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: index * 0.05, duration: 0.3 }}
             className="glass-card rounded-xl overflow-hidden border border-purple-900/30 hover:border-purple-500/30 transition-colors"
         >
             <button

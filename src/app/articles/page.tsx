@@ -89,7 +89,7 @@ export default function ArticlesPage() {
                             </p>
 
                             {/* Key Features */}
-                            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                                 <div className="flex items-start gap-3 bg-purple-500/5 p-4 rounded-xl border border-purple-500/20">
                                     <Zap className="w-5 h-5 text-purple-400 flex-shrink-0 mt-1" />
                                     <div>
