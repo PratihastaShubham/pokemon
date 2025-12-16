@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 export default function ContactPage() {
-    // Handle client-side meta tags for better SEO
     useEffect(() => {
         document.title = "Contact Us | Pokémon Reminiscencia";
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -21,7 +20,6 @@ export default function ContactPage() {
     return (
         <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12">
 
-            {/* Contact Information */}
             <motion.section
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}

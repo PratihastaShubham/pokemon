@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 export default function Loading() {
     return (
         <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-            {/* Animated background */}
             <div className="absolute inset-0 z-[-1]">
                 <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-pink-600/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
@@ -16,7 +15,6 @@ export default function Loading() {
                 transition={{ duration: 0.5 }}
                 className="text-center"
             >
-                {/* Pokéball Spinner */}
                 <div className="relative w-24 h-24 mx-auto mb-8">
                     <motion.div
                         animate={{ rotate: 360 }}
@@ -32,7 +30,6 @@ export default function Loading() {
                     ></motion.div>
                 </div>
 
-                {/* Loading Text */}
                 <motion.h2
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -44,7 +41,6 @@ export default function Loading() {
                     </span>
                 </motion.h2>
 
-                {/* Animated Dots */}
                 <div className="flex justify-center gap-2">
                     {[0, 1, 2].map((i) => (
                         <motion.div
@@ -61,7 +57,6 @@ export default function Loading() {
                     ))}
                 </div>
 
-                {/* Optional Loading Message */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

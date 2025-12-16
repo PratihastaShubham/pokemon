@@ -24,14 +24,11 @@ export default function Header() {
             >
                 <div className="container mx-auto max-w-[1200px] px-6 h-full">
                     <div className="flex items-center justify-between h-full">
-                        {/* Logo/Title */}
                         <Link href="/" className="group flex items-center gap-2 hover:no-underline">
                             <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-pulse-glow group-hover:bg-right transition-all duration-500">
                                 Pokémon Reminiscencia
                             </span>
                         </Link>
-
-                        {/* Desktop Navigation */}
                         <nav className="hidden md:flex items-center gap-8">
                             {navLinks.map(([label, href]) => (
                                 <Link
@@ -45,7 +42,6 @@ export default function Header() {
                             ))}
                         </nav>
 
-                        {/* Mobile Menu Button */}
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
@@ -56,12 +52,9 @@ export default function Header() {
                     </div>
                 </div>
             </motion.header>
-
-            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -71,7 +64,6 @@ export default function Header() {
                             onClick={() => setMobileMenuOpen(false)}
                         />
 
-                        {/* Menu Panel */}
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
@@ -97,7 +89,6 @@ export default function Header() {
                                     </motion.div>
                                 ))}
 
-                                {/* Decorative Elements */}
                                 <div className="mt-8 pt-6 border-t border-purple-900/30">
                                     <p className="text-xs text-gray-500 px-4">
                                         © 2025 Pokémon Reminiscencia

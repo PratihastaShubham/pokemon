@@ -48,7 +48,6 @@ export default function AboutPage() {
                 </p>
             </motion.section>
 
-            {/* What is Reminiscencia */}
             <motion.section
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -78,7 +77,6 @@ export default function AboutPage() {
                 </div>
             </motion.section>
 
-            {/* Why This Site Exists */}
             <motion.section
                 variants={containerVariants}
                 initial="hidden"
@@ -123,7 +121,6 @@ export default function AboutPage() {
                 </div>
             </motion.section>
 
-            {/* What We Offer */}
             <motion.section
                 initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -155,7 +152,6 @@ export default function AboutPage() {
                 </div>
             </motion.section>
 
-            {/* Disclaimer */}
             <motion.section
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -173,7 +169,6 @@ export default function AboutPage() {
                 </div>
             </motion.section>
 
-            {/* Contact */}
             <motion.section
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

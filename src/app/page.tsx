@@ -25,7 +25,6 @@ const itemVariants = {
 };
 
 export default function ReminiscenciaPage() {
-    // Structured Data for SEO
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
@@ -55,21 +54,18 @@ export default function ReminiscenciaPage() {
 
     return (
         <>
-            {/* Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
 
             <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12 overflow-hidden">
-                {/* Hero Section */}
                 <motion.section
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="mb-16 sm:mb-24 text-center py-8 sm:py-16 relative"
                 >
-                    {/* Animated background glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-gradient-to-r from-purple-600/30 via-pink-500/20 to-blue-500/30 blur-[120px] rounded-full z-[-1] animate-pulse" />
 
                     <motion.div
@@ -84,12 +80,7 @@ export default function ReminiscenciaPage() {
                                 Reminiscencia
                             </span>
                         </h1>
-                        {/* <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 px-4">
-                            A beautiful, challenging, story-driven roguelike adventure that reimagines what Pokémon could be.
-                        </p> */}
                     </motion.div>
-
-                    {/* CTA Buttons */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -112,7 +103,6 @@ export default function ReminiscenciaPage() {
                         </a>
                     </motion.div>
 
-                    {/* Quick Stats */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -134,7 +124,6 @@ export default function ReminiscenciaPage() {
                     </motion.div>
                 </motion.section>
 
-                {/* Article Content Section */}
                 <motion.section
                     variants={containerVariants}
                     initial="hidden"
@@ -143,7 +132,6 @@ export default function ReminiscenciaPage() {
                     className="mb-24"
                 >
                     <article className="prose prose-invert prose-lg max-w-none">
-                        {/* Introduction */}
                         <motion.div variants={itemVariants} className="glass-card p-8 sm:p-12 rounded-3xl mb-12 border border-purple-500/20">
                             
                             <p className="text-gray-300 leading-relaxed text-lg mb-4">
@@ -154,7 +142,6 @@ export default function ReminiscenciaPage() {
                             </p>
                         </motion.div>
 
-                        {/* Screenshots Section */}
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full" />
@@ -162,10 +149,7 @@ export default function ReminiscenciaPage() {
                             </div>
                             <div className="glass-card p-4 sm:p-8 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-900/10 to-pink-900/10">
                                 <div className="relative rounded-2xl overflow-hidden border-2 border-purple-500/40 shadow-[0_0_50px_rgba(168,85,247,0.3)] group">
-                                    {/* Glow effect on hover */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
-
-                                    {/* Screenshot GIF */}
                                     <Image
                                         src="/screenies.gif"
                                         alt="Pokémon Reminiscencia Gameplay Screenshots"
@@ -181,8 +165,6 @@ export default function ReminiscenciaPage() {
                                 </p>
                             </div>
                         </motion.div>
-
-                        {/* What Is Mini Scencia */}
 
                         <motion.div variants={itemVariants} className="mb-12" id="what-is">
                             <div className="flex items-center gap-3 mb-6">
@@ -209,15 +191,12 @@ export default function ReminiscenciaPage() {
                                 </div>
                             </div>
                         </motion.div>
-
-                        {/* Gameplay Overview */}
                         <motion.div variants={itemVariants} className="mb-12" id="features">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full" />
                                 <h2 className="text-3xl sm:text-4xl font-bold text-white">Story</h2>
                             </div>
 
-                            {/* Story */}
                             <div className="glass-card p-8 rounded-2xl border border-white/10 mb-8">
                                 <h3 className="text-2xl font-bold text-purple-300 mb-4">A Character-Driven Narrative : Anthony, Phione, and a Dangerous Promise</h3>
                                 <p className="text-gray-300 leading-relaxed text-lg mb-4">
@@ -244,8 +223,6 @@ export default function ReminiscenciaPage() {
                                     Meet charismatic characters like Athan and the sharp-tongued Kyle along the way.
                                 </p>
                             </div>
-
-                            {/* Why Different */}
                             <div className="glass-card p-8 rounded-2xl border border-white/10">
                                 <h3 className="text-2xl font-bold text-pink-300 mb-4">Why Pokémon Reminiscencia Feels So Different</h3>
                                 <p className="text-gray-300 leading-relaxed text-lg mb-4">
@@ -265,8 +242,6 @@ export default function ReminiscenciaPage() {
                                 </div>
                             </div>
                         </motion.div>
-
-                        {/* Key Features */}
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-purple-500 to-blue-500 rounded-full" />
@@ -318,8 +293,6 @@ export default function ReminiscenciaPage() {
                                 Pokémon Reminiscencia isn't just a love letter to the franchise—it's a confident reimagining of it.
                             </p>
                         </motion.div>
-
-                        {/* Platforms & Requirements */}
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
@@ -344,8 +317,6 @@ export default function ReminiscenciaPage() {
                                 </p>
                             </div>
                         </motion.div>
-
-                        {/* Download Section */}
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full" />
@@ -387,8 +358,6 @@ export default function ReminiscenciaPage() {
                                 </div>
                             </div>
                         </motion.div>
-
-                        {/* Safety Section */}
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-green-500 to-purple-500 rounded-full" />
@@ -413,8 +382,6 @@ export default function ReminiscenciaPage() {
                                 </div>
                             </div>
                         </motion.div>
-
-                        {/* Who Should Play */}
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
@@ -437,8 +404,6 @@ export default function ReminiscenciaPage() {
                                 </div>
                             </div>
                         </motion.div>
-
-                        {/* Final Thoughts */}
                         <motion.div variants={itemVariants} className="mb-6">
                             <div className="glass-card p-10 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-purple-900/30 to-pink-900/30">
                                 <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 mb-6">
@@ -454,8 +419,6 @@ export default function ReminiscenciaPage() {
                         </motion.div>
                     </article>
                 </motion.section>
-
-                {/* FAQ Section */}
                 <motion.section
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -468,8 +431,6 @@ export default function ReminiscenciaPage() {
                     </div>
                     <ReminiscenciaFAQ />
                 </motion.section>
-
-                {/* Final CTA */}
                 <motion.section
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}

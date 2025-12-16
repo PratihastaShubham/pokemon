@@ -12,13 +12,11 @@ export default function Error({
     reset: () => void;
 }) {
     useEffect(() => {
-        // Log the error to an error reporting service
         console.error("Error caught:", error);
     }, [error]);
 
     return (
         <div className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden">
-            {/* Animated background */}
             <div className="absolute inset-0 z-[-1]">
                 <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-red-600/20 rounded-full blur-[120px] animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
@@ -31,7 +29,6 @@ export default function Error({
                     transition={{ duration: 0.8 }}
                     className="text-center"
                 >
-                    {/* Error Icon */}
                     <motion.div
                         initial={{ scale: 0.8, rotate: -10 }}
                         animate={{ scale: 1, rotate: 0 }}
@@ -43,7 +40,6 @@ export default function Error({
                         </div>
                     </motion.div>
 
-                    {/* Message */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -60,7 +56,6 @@ export default function Error({
                             A wild error appeared! Don't worry, it happens to the best of us. We're working on catching it.
                         </p>
 
-                        {/* Error Details (only in development) */}
                         {process.env.NODE_ENV === 'development' && (
                             <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6 text-left">
                                 <p className="text-red-300 font-semibold mb-2 text-sm">Error Details (Development Only):</p>
@@ -86,7 +81,6 @@ export default function Error({
                         </div>
                     </motion.div>
 
-                    {/* Action Buttons */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -110,7 +104,6 @@ export default function Error({
                         </Link>
                     </motion.div>
 
-                    {/* Helpful Links */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

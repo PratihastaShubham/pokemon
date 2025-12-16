@@ -5,7 +5,6 @@ import { Download, CheckCircle, AlertTriangle, FileText, HardDrive, Monitor, Shi
 import { useEffect } from "react";
 
 export default function ReminiscenciaDownloadPage() {
-    // Handle client-side meta tags for better SEO
     useEffect(() => {
         document.title = "Download Pokémon Reminiscencia | Free Windows PC Game";
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -20,7 +19,6 @@ export default function ReminiscenciaDownloadPage() {
     }, []);
     return (
         <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12 overflow-hidden">
-            {/* Hero Section */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -40,7 +38,6 @@ export default function ReminiscenciaDownloadPage() {
                 </p>
             </motion.section>
 
-            {/* Download Card */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +53,6 @@ export default function ReminiscenciaDownloadPage() {
                         <p className="text-sm sm:text-base text-gray-400">Full English translation available</p>
                     </div>
 
-                    {/* Game Info */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                         <div className="bg-black/30 p-5 rounded-xl border border-white/10 text-center">
                             <HardDrive className="w-6 h-6 text-purple-400 mb-2 mx-auto" />
@@ -75,7 +71,6 @@ export default function ReminiscenciaDownloadPage() {
                         </div>
                     </div>
 
-                    {/* Download Button */}
                     <div className="text-center mb-8">
                         <a
                             href="https://dl.sources.run/file/1216/reminiscenciav2_3-zip/"
@@ -91,7 +86,6 @@ export default function ReminiscenciaDownloadPage() {
                         </p>
                     </div>
 
-                    {/* Disclaimer */}
                     <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6">
                         <div className="flex items-start gap-3">
                             <AlertTriangle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-1" />
@@ -106,7 +100,6 @@ export default function ReminiscenciaDownloadPage() {
                 </div>
             </motion.section>
 
-            {/* Article Section */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +170,6 @@ export default function ReminiscenciaDownloadPage() {
                 </div>
             </motion.section>
 
-            {/* Installation Instructions */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -223,7 +215,6 @@ export default function ReminiscenciaDownloadPage() {
                 </div>
             </motion.section>
 
-            {/* System Requirements */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -286,7 +277,6 @@ export default function ReminiscenciaDownloadPage() {
                 </div>
             </motion.section>
 
-            {/* Safety Tips */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -315,7 +305,6 @@ export default function ReminiscenciaDownloadPage() {
                 </div>
             </motion.section>
 
-            {/* Troubleshooting */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -356,7 +345,6 @@ export default function ReminiscenciaDownloadPage() {
                 </div>
             </motion.section>
 
-            {/* Back Link */}
             <motion.section
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

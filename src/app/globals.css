@@ -48,26 +48,20 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Mobile-specific improvements */
 @media (max-width: 640px) {
-  /* Prevent horizontal overflow on mobile */
   body {
     overflow-x: hidden;
   }
 
-  /* Better touch targets for mobile */
   a, button {
     min-height: 44px;
     min-width: 44px;
   }
 
-  /* Improved readability on small screens */
   .glass-card {
     font-size: 0.95rem;
     line-height: 1.6;
   }
-
-  /* Smaller backdrop blur for better performance on mobile */
   .glass-nav {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -79,7 +73,6 @@
   }
 }
 
-/* Prevent text selection on mobile for better UX */
 @media (hover: none) and (pointer: coarse) {
   button,
   .glass-nav a {
@@ -89,23 +82,17 @@
   }
 }
 
-/* Ensure images are responsive */
 img {
   max-width: 100%;
   height: auto;
 }
-
-/* Better scrolling on iOS */
 body {
   -webkit-overflow-scrolling: touch;
 }
-
-/* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Offset anchor scroll for fixed header */
 :target {
   scroll-margin-top: 100px;
 }

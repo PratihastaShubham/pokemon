@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 export default function DMCAPage() {
-    // Handle client-side meta tags for better SEO
     useEffect(() => {
         document.title = "DMCA Policy | Pokémon Reminiscencia";
         const metaDescription = document.querySelector('meta[name="description"]');
@@ -20,7 +19,6 @@ export default function DMCAPage() {
     }, []);
     return (
         <div className="container mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-12">
-            {/* Page Header */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -38,7 +36,6 @@ export default function DMCAPage() {
                 </p>
             </motion.section>
 
-            {/* Important Notice */}
             <motion.section
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -58,14 +55,12 @@ export default function DMCAPage() {
                 </div>
             </motion.section>
 
-            {/* Main Content */}
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="space-y-8"
             >
-                {/* Copyright Respect */}
                 <section className="glass-card rounded-xl p-8 border border-purple-500/20">
                     <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                         <FileText className="w-6 h-6 text-purple-400" />
@@ -86,7 +81,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* Our Role */}
                 <section className="glass-card rounded-xl p-6 sm:p-8 border border-purple-500/20">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">What This Website Does</h2>
                     <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
@@ -116,7 +110,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* DMCA Notice */}
                 <section className="glass-card rounded-xl p-8 border border-purple-500/20">
                     <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                         <Mail className="w-6 h-6 text-purple-400" />
@@ -156,7 +149,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* Counter-Notice */}
                 <section className="glass-card rounded-xl p-6 sm:p-8 border border-purple-500/20">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Counter-Notification</h2>
                     <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
@@ -173,7 +165,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* Repeat Infringers */}
                 <section className="glass-card rounded-xl p-6 sm:p-8 border border-purple-500/20">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Repeat Infringer Policy</h2>
                     <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
@@ -183,7 +174,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* Contact Information */}
                 <section className="glass-card rounded-xl p-6 sm:p-8 border border-purple-500/20 bg-gradient-to-br from-purple-900/20 to-pink-900/20">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Contact for DMCA Notices</h2>
                     <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
@@ -206,7 +196,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* Fair Use */}
                 <section className="glass-card rounded-xl p-6 sm:p-8 border border-blue-500/20">
                     <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Fair Use Notice</h2>
                     <div className="space-y-4 text-sm sm:text-base text-gray-300 leading-relaxed">
@@ -219,7 +208,6 @@ export default function DMCAPage() {
                     </div>
                 </section>
 
-                {/* Last Updated */}
                 <div className="text-center pt-8 border-t border-white/5">
                     <p className="text-gray-500 text-sm">
                         Last Updated: December 15, 2025
@@ -227,7 +215,6 @@ export default function DMCAPage() {
                 </div>
             </motion.div>
 
-            {/* Back to Home */}
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

@@ -6,7 +6,6 @@ import { Home, Search, ArrowLeft, HelpCircle } from "lucide-react";
 export default function NotFound() {
     return (
         <div className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden">
-            {/* Animated background */}
             <div className="absolute inset-0 z-[-1]">
                 <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-pink-600/20 rounded-full blur-[120px] animate-pulse delay-1000"></div>
@@ -19,7 +18,6 @@ export default function NotFound() {
                     transition={{ duration: 0.8 }}
                     className="text-center"
                 >
-                    {/* 404 Display */}
                     <motion.div
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
@@ -33,7 +31,6 @@ export default function NotFound() {
                         </h1>
                     </motion.div>
 
-                    {/* Message */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -59,7 +56,6 @@ export default function NotFound() {
                         </div>
                     </motion.div>
 
-                    {/* Action Buttons */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -83,7 +79,6 @@ export default function NotFound() {
                         </button>
                     </motion.div>
 
-                    {/* Popular Links */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
