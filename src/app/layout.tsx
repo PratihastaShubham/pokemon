@@ -17,9 +17,34 @@ export const metadata: Metadata = {
     template: "%s | Pokémon Reminiscencia"
   },
   description: "Download Pokémon Reminiscencia - a beautiful, challenging, story-driven roguelike adventure. Get the complete game, installation help, and all the information you need.",
-  keywords: ["pokemon", "reminiscencia", "roguelike", "fan game", "download", "anthony", "phione", "pokemon essentials", "fan-made game", "pokemon fan game", "free pokemon game"],
+  keywords: [
+    "pokemon",
+    "reminiscencia",
+    "roguelike",
+    "fan game",
+    "download",
+    "anthony",
+    "phione",
+    "pokemon essentials",
+    "fan-made game",
+    "pokemon fan game",
+    "free pokemon game",
+    "pokemon rpg",
+    "pokemon windows",
+    "roguelike rpg",
+    "story-driven pokemon"
+  ],
   authors: [{ name: "Pokémon Reminiscencia Team" }],
   creator: "Pokémon Reminiscencia Team",
+  publisher: "Pokémon Reminiscencia",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://pokemonreminiscencia.site',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -41,6 +66,7 @@ export const metadata: Metadata = {
     title: 'Pokémon Reminiscencia - Roguelike Fan Adventure',
     description: 'Download Pokémon Reminiscencia - a beautiful, challenging, story-driven roguelike adventure free for Windows PC.',
     images: ['/screenies.gif'],
+    creator: '@pokemonreminiscencia',
   },
   robots: {
     index: true,

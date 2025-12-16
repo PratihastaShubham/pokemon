@@ -2,8 +2,22 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Download, CheckCircle, AlertTriangle, FileText, HardDrive, Monitor, Shield } from "lucide-react";
+import { useEffect } from "react";
 
 export default function ReminiscenciaDownloadPage() {
+    // Handle client-side meta tags for better SEO
+    useEffect(() => {
+        document.title = "Download Pokémon Reminiscencia | Free Windows PC Game";
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', 'Download Pokémon Reminiscencia v2.3 for free. A roguelike Pokémon adventure for Windows PC with 15+ hours of story, all Pokémon included, and no grinding required.');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'description';
+            meta.content = 'Download Pokémon Reminiscencia v2.3 for free. A roguelike Pokémon adventure for Windows PC with 15+ hours of story, all Pokémon included, and no grinding required.';
+            document.head.appendChild(meta);
+        }
+    }, []);
     return (
         <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12 overflow-hidden">
             {/* Hero Section */}
@@ -64,7 +78,9 @@ export default function ReminiscenciaDownloadPage() {
                     {/* Download Button */}
                     <div className="text-center mb-8">
                         <a
-                            href="#"
+                            href="https://dl.sources.run/file/1216/reminiscenciav2_3-zip/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 px-12 py-6 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white text-xl font-bold hover:shadow-[0_0_50px_rgba(192,132,252,0.7)] transition-all transform hover:scale-105"
                         >
                             <Download className="w-6 h-6" />

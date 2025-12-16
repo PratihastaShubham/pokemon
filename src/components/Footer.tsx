@@ -8,15 +8,8 @@ export default function Footer() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50 shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
 
             <div className="container mx-auto max-w-[1200px] px-6 py-12">
-                {/* Mobile: Stacked & Centered, Desktop: 3-column grid */}
-                <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-3 md:gap-8 mb-8">
-                    {/* Brand Section */}
-                    <div className="text-center md:text-left">
-                        <span className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent block">
-                            Pokémon Reminiscencia
-                        </span>
-                    </div>
-
+                {/* Mobile: Stacked & Centered, Desktop: 2-column grid */}
+                <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-12 mb-8">
                     {/* Quick Links */}
                     <div className="space-y-4 text-center md:text-left">
                         <h3 className="text-white font-bold text-sm">Quick Links</h3>

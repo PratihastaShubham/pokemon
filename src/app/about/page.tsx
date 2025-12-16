@@ -2,6 +2,7 @@
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { Heart, Users, Globe, Sparkles } from "lucide-react";
+import { useEffect } from "react";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,6 +18,19 @@ const itemVariants = {
 };
 
 export default function AboutPage() {
+    // Handle client-side meta tags for better SEO
+    useEffect(() => {
+        document.title = "About | Pokémon Reminiscencia";
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', 'Learn about Pokémon Reminiscencia - a critically acclaimed roguelike fan game with 15+ hours of story-driven gameplay, all Pokémon included, and innovative mechanics.');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'description';
+            meta.content = 'Learn about Pokémon Reminiscencia - a critically acclaimed roguelike fan game with 15+ hours of story-driven gameplay, all Pokémon included, and innovative mechanics.';
+            document.head.appendChild(meta);
+        }
+    }, []);
     return (
         <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12">
             {/* Page Header */}

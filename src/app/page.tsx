@@ -145,9 +145,7 @@ export default function ReminiscenciaPage() {
                     <article className="prose prose-invert prose-lg max-w-none">
                         {/* Introduction */}
                         <motion.div variants={itemVariants} className="glass-card p-8 sm:p-12 rounded-3xl mb-12 border border-purple-500/20">
-                            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-                                Pokémon Reminiscencia: A Beautiful, Challenging, Story-Driven Fan Adventure
-                            </h2>
+                            
                             <p className="text-gray-300 leading-relaxed text-lg mb-4">
                                 It throws the classic Pokémon formula out the window—and somehow makes it better. This critically acclaimed fan game takes Pokémon in a bold new direction, replacing the familiar League structure with a deeply narrative, roguelike-inspired experience.
                             </p>

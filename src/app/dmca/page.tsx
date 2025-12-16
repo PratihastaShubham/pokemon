@@ -2,8 +2,22 @@
 import { motion } from "framer-motion";
 import { Shield, Mail, FileText, AlertTriangle } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function DMCAPage() {
+    // Handle client-side meta tags for better SEO
+    useEffect(() => {
+        document.title = "DMCA Policy | Pokémon Reminiscencia";
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', 'DMCA copyright policy for Pokémon Reminiscencia website. Information about copyright respect, takedown procedures, and fair use notices.');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'description';
+            meta.content = 'DMCA copyright policy for Pokémon Reminiscencia website. Information about copyright respect, takedown procedures, and fair use notices.';
+            document.head.appendChild(meta);
+        }
+    }, []);
     return (
         <div className="container mx-auto max-w-[900px] px-4 sm:px-6 py-8 sm:py-12">
             {/* Page Header */}
