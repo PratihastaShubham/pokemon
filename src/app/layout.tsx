@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: 'Download Pokémon Reminiscencia - a beautiful, challenging, story-driven roguelike adventure free for Windows PC.',
     images: [
       {
-        url: 'https://pub-133a3887e9d04fdb98224777e237c4eb.r2.dev/screenies.gif',
+        url: 'https://pub-133a3887e9d04fdb98224777e237c4eb.r2.dev/screenies.webp',
         width: 1200,
         height: 675,
         alt: 'Pokémon Reminiscencia Gameplay',
