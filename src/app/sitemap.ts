@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next'
 
+// This forces the file to be static for Cloudflare Pages
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://pokemonreminiscencia.site'
 
