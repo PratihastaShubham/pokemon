@@ -151,7 +151,7 @@ export default function ReminiscenciaPage() {
                                 <div className="relative rounded-2xl overflow-hidden border-2 border-purple-500/40 shadow-[0_0_50px_rgba(168,85,247,0.3)] group">
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
                                     <Image
-                                        src="/screenies.gif"
+                                        src="https://pub-133a3887e9d04fdb98224777e237c4eb.r2.dev/screenies.gif"
                                         alt="Pokémon Reminiscencia Gameplay Screenshots"
                                         width={1200}
                                         height={675}
