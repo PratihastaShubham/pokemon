@@ -21,6 +21,42 @@ export const metadata: Metadata = {
   description:
     "Download Pokémon Reminiscencia, a beautiful and challenging story-driven roguelike Pokémon fan game for Windows PC.",
 
+  keywords: [
+    // Reminiscencia (Primary Brand)
+    "pokemon reminiscencia",
+    "pokémon reminiscencia",
+    "pokemon reminiscencia download",
+    "pokémon reminiscencia download",
+    "pokemon reminiscencia english",
+    "pokémon reminiscencia download english",
+    "pokemon reminiscencia wiki",
+    "pokémon reminiscencia wiki",
+    "pokemon reminiscencia characters",
+    "pokemon reminiscencia lucius",
+    "lucius pokemon reminiscencia",
+    "pokemon reminiscencia artica",
+    "pokemon reminiscencia fanart",
+    "pokemon reminiscencia dlc",
+    "pokemon reminiscencia rom",
+    "pokemon reminiscencia cheats",
+    "pokemon reminiscencia starters",
+    "pokemon reminiscencia endings",
+    "pokemon reminiscencia pokedex",
+
+    // Reminiscence (Common Misspelling / Alternate Search)
+    "pokemon reminiscence",
+    "pokémon reminiscence",
+    "pokemon reminiscence download",
+    "pokémon reminiscence download",
+    "pokemon reminiscence english",
+    "pokemon reminiscence wiki",
+    "pokemon reminiscence characters",
+    "pokemon reminiscence fan game",
+    "pokemon reminiscence rom",
+    "pokemon reminiscence cheats",
+    "pokemon reminiscence pokedex",
+  ],
+
   authors: [{ name: "Pokémon Reminiscencia Team" }],
   creator: "Pokémon Reminiscencia Team",
   publisher: "Pokémon Reminiscencia",
@@ -77,8 +113,8 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
+    // google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    // yandex: "YOUR_YANDEX_VERIFICATION_CODE",
   },
 };
 
