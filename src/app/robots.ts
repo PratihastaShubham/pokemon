@@ -1,15 +1,32 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
-// This forces the file to be static for Cloudflare Pages
-export const dynamic = 'force-static'
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
-    return {
-        rules: {
-            userAgent: '*',
-            allow: '/',
-            disallow: '/api/',
-        },
-        sitemap: 'https://pokemonreminiscencia.site/sitemap.xml',
-    }
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: [],
+      },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+        disallow: [],
+      },
+      {
+        userAgent: "Yandex",
+        allow: "/",
+        disallow: [],
+      },
+    ],
+    sitemap: "https://pokemonreminiscencia.site/sitemap.xml",
+    host: "pokemonreminiscencia.site",
+  };
 }
