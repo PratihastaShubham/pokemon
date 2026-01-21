@@ -5,11 +5,14 @@ export const dynamic = "force-static";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // Allow all normal crawlers, block API routes
       {
         userAgent: "*",
         allow: "/",
         disallow: ["/api/"],
       },
+
+      // Block AI training and large-scale data bots
       {
         userAgent: [
           "Amazonbot",
@@ -22,10 +25,6 @@ export default function robots(): MetadataRoute.Robots {
           "meta-externalagent",
         ],
         disallow: "/",
-      },
-      {
-        userAgent: ["Googlebot", "Bingbot", "Yandex"],
-        allow: "/",
       },
     ],
     sitemap: "https://pokemonreminiscencia.site/sitemap.xml",
