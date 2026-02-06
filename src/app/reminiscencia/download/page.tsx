@@ -2,7 +2,54 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Download, CheckCircle, AlertTriangle, FileText, HardDrive, Monitor, Shield } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
+
+// Helper component to render ads safely in an iframe
+const BannerAd = ({ adKey, width, height }: { adKey: string, width: number, height: number }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+        
+        const iframe = document.createElement('iframe');
+        iframe.width = width.toString();
+        iframe.height = height.toString();
+        iframe.title = 'Advertisement';
+        iframe.style.border = 'none';
+        iframe.style.overflow = 'hidden';
+        iframe.scrolling = 'no';
+        
+        // Clear container and append iframe
+        containerRef.current.innerHTML = '';
+        containerRef.current.appendChild(iframe);
+        
+        const iframeDoc = iframe.contentWindow?.document;
+        if (iframeDoc) {
+            iframeDoc.open();
+            iframeDoc.write(`
+                <html>
+                    <body style="margin:0;padding:0;background:transparent;">
+                        <script>
+                            atOptions = {
+                                'key' : '${adKey}',
+                                'format' : 'iframe',
+                                'height' : ${height},
+                                'width' : ${width},
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="//www.highperformanceformat.com/${adKey}/invoke.js"></script>
+                    </body>
+                </html>
+            `);
+            iframeDoc.close();
+        }
+    }, [adKey, width, height]);
+
+    return (
+        <div ref={containerRef} className="flex justify-center my-4 overflow-hidden rounded-lg bg-black/5" style={{ minHeight: height }} />
+    );
+};
 
 export default function ReminiscenciaDownloadPage() {
     useEffect(() => {
@@ -17,8 +64,14 @@ export default function ReminiscenciaDownloadPage() {
             document.head.appendChild(meta);
         }
     }, []);
+
     return (
         <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12 overflow-hidden">
+            {/* Ad Banner 1 - Top of Page */}
+            <div className="flex justify-center mb-8">
+                <BannerAd adKey="a2c7bca4a23707c28bdf46bdcd719ae4" width={468} height={60} />
+            </div>
+
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -71,6 +124,11 @@ export default function ReminiscenciaDownloadPage() {
                         </div>
                     </div>
 
+                    {/* Ad Banner 2 - Before Download Button */}
+                    <div className="flex justify-center mb-8">
+                        <BannerAd adKey="8b0a3162733105a227894449b4d1c860" width={320} height={50} />
+                    </div>
+
                     <div className="text-center mb-8">
                         <a
                             href="https://dl.sources.run/file/1216/reminiscenciav2_3-zip/"
@@ -99,6 +157,11 @@ export default function ReminiscenciaDownloadPage() {
                     </div>
                 </div>
             </motion.section>
+
+            {/* Ad Banner 3 - After Download Section */}
+            <div className="flex justify-center mb-16">
+                <BannerAd adKey="960b932f633f8680967f2f26de7e1f19" width={300} height={250} />
+            </div>
 
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
