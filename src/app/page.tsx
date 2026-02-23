@@ -4,6 +4,54 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Download, Clock, GamepadIcon, Zap, Shield, Star } from "lucide-react";
 import ReminiscenciaFAQ from "@/components/ReminiscenciaFAQ";
+import { useEffect, useRef } from "react";
+
+// Helper component to render ads safely in an iframe
+const BannerAd = ({ adKey, width, height }: { adKey: string, width: number, height: number }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+        
+        const iframe = document.createElement('iframe');
+        iframe.width = width.toString();
+        iframe.height = height.toString();
+        iframe.title = 'Advertisement';
+        iframe.style.border = 'none';
+        iframe.style.overflow = 'hidden';
+        iframe.scrolling = 'no';
+        
+        // Clear container and append iframe
+        containerRef.current.innerHTML = '';
+        containerRef.current.appendChild(iframe);
+        
+        const iframeDoc = iframe.contentWindow?.document;
+        if (iframeDoc) {
+            iframeDoc.open();
+            iframeDoc.write(`
+                <html>
+                    <body style="margin:0;padding:0;background:transparent;">
+                        <script>
+                            atOptions = {
+                                'key' : '${adKey}',
+                                'format' : 'iframe',
+                                'height' : ${height},
+                                'width' : ${width},
+                                'params' : {}
+                            };
+                        </script>
+                        <script type="text/javascript" src="//www.highperformanceformat.com/${adKey}/invoke.js"></script>
+                    </body>
+                </html>
+            `);
+            iframeDoc.close();
+        }
+    }, [adKey, width, height]);
+
+    return (
+        <div ref={containerRef} className="flex justify-center my-4 overflow-hidden rounded-lg bg-black/5" style={{ minHeight: height }} />
+    );
+};
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -59,6 +107,9 @@ export default function ReminiscenciaPage() {
             />
 
             <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 py-8 sm:py-12 overflow-hidden">
+                <div className="flex justify-center mb-8">
+                    <BannerAd adKey="a2c7bca4a23707c28bdf46bdcd719ae4" width={468} height={60} />
+                </div>
                 <motion.section
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -124,6 +175,10 @@ export default function ReminiscenciaPage() {
                         ))}
                     </motion.div>
                 </motion.section>
+
+                <div className="flex justify-center -mt-8 mb-12">
+                    <BannerAd adKey="8b0a3162733105a227894449b4d1c860" width={320} height={50} />
+                </div>
 
                 <motion.section
                     variants={containerVariants}
@@ -294,6 +349,7 @@ export default function ReminiscenciaPage() {
                                 Pokémon Reminiscencia isn't just a love letter to the franchise—it's a confident reimagining of it.
                             </p>
                         </motion.div>
+
                         <motion.div variants={itemVariants} className="mb-12">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-1 h-10 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
@@ -422,6 +478,10 @@ export default function ReminiscenciaPage() {
                         </motion.div>
                     </article>
                 </motion.section>
+                <div className="flex justify-center my-12">
+                    <BannerAd adKey="960b932f633f8680967f2f26de7e1f19" width={300} height={250} />
+                </div>
+
                 <motion.section
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
