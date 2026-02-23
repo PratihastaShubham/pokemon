@@ -37,9 +37,8 @@ export default function ReminiscenciaPage() {
             "price": "0",
             "priceCurrency": "USD"
         },
-        "description": "A beautiful, challenging, story-driven roguelike Pokémon adventure featuring Anthony and Phione. Over 15 hours of gameplay with all Pokémon included.",
-        "downloadUrl": "https://pokemonreminiscencia.site/reminiscencia/download",
-        "softwareVersion": "Complete Edition",
+        "downloadUrl": "https://www.mediafire.com/file/azpvhd4wkphmqq3/ReminiscenciaV2_3.zip/file",
+        "softwareVersion": "v2.3",
         "fileSize": "500MB",
         "aggregateRating": {
             "@type": "AggregateRating",
@@ -87,14 +86,16 @@ export default function ReminiscenciaPage() {
                         transition={{ delay: 0.2, duration: 0.5 }}
                         className="flex flex-col sm:flex-row justify-center gap-4 px-4"
                     >
-                        <Link
-                            href="/reminiscencia/download"
+                        <a
+                            href="https://www.mediafire.com/file/azpvhd4wkphmqq3/ReminiscenciaV2_3.zip/file"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white font-bold hover:shadow-[0_0_40px_rgba(192,132,252,0.6)] transition-all transform hover:scale-105 flex items-center justify-center gap-3 relative overflow-hidden"
                         >
                             <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
                             <Download className="w-5 h-5" />
                             Download Now
-                        </Link>
+                        </a>
                         <a
                             href="#what-is"
                             className="px-8 py-4 rounded-full border-2 border-purple-500/50 hover:bg-purple-500/10 transition-all font-bold backdrop-blur-sm transform hover:scale-105"
@@ -342,13 +343,15 @@ export default function ReminiscenciaPage() {
                                     </div>
                                 </div>
 
-                                <Link
-                                    href="/reminiscencia/download"
+                                <a
+                                    href="https://www.mediafire.com/file/azpvhd4wkphmqq3/ReminiscenciaV2_3.zip/file"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-3 px-12 py-6 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white text-xl font-bold hover:shadow-[0_0_50px_rgba(192,132,252,0.7)] transition-all transform hover:scale-105 mb-6"
                                 >
                                     <Download className="w-6 h-6" />
-                                    Go to Download Page
-                                </Link>
+                                    Download Pokémon Reminiscencia
+                                </a>
 
                                 <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6 mt-8">
                                     <p className="text-yellow-300 font-semibold mb-2">⚠️ Important Note</p>
