@@ -84,10 +84,14 @@ export default function ReminiscenciaPage() {
 
     const handleDownloadClick = useCallback((e: React.MouseEvent, mirror: boolean = false) => {
         e.preventDefault();
-        setIsMirror(mirror);
+        if (mirror) {
+            window.open(DOWNLOAD_URL, "_blank", "noopener,noreferrer");
+            return;
+        }
+        setIsMirror(false);
         setCountdown(TIMER_DURATION);
         setShowModal(true);
-    }, []);
+    }, [DOWNLOAD_URL, TIMER_DURATION]);
 
     useEffect(() => {
         if (showModal) {
