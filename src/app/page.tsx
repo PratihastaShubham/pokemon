@@ -80,8 +80,11 @@ export default function ReminiscenciaPage() {
     const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const popupAdRef = useRef<HTMLDivElement>(null);
 
-    const handleDownloadClick = useCallback((e: React.MouseEvent) => {
+    const [isMirror, setIsMirror] = useState(false);
+
+    const handleDownloadClick = useCallback((e: React.MouseEvent, mirror: boolean = false) => {
         e.preventDefault();
+        setIsMirror(mirror);
         setCountdown(TIMER_DURATION);
         setShowModal(true);
     }, []);
@@ -107,7 +110,7 @@ export default function ReminiscenciaPage() {
 
     // Load the script-based ad when modal opens
     useEffect(() => {
-        if (showModal && popupAdRef.current) {
+        if (showModal && popupAdRef.current && !isMirror) {
             popupAdRef.current.innerHTML = '';
             const script = document.createElement('script');
             script.src = 'https://pl28658319.profitablecpmratenetwork.com/35/a0/74/35a0748915d879d0ffbc2671e880964e.js';
@@ -117,7 +120,7 @@ export default function ReminiscenciaPage() {
         return () => {
             if (popupAdRef.current) popupAdRef.current.innerHTML = '';
         };
-    }, [showModal]);
+    }, [showModal, isMirror]);
 
     const structuredData = {
         "@context": "https://schema.org",
@@ -199,6 +202,20 @@ export default function ReminiscenciaPage() {
                         </a>
                     </motion.div>
 
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                        className="flex justify-center mt-4"
+                    >
+                        <button
+                            onClick={(e) => handleDownloadClick(e, true)}
+                            className="group px-6 py-3 rounded-full border border-purple-500/30 hover:border-purple-500/60 text-purple-300 text-sm font-semibold transition-all transform hover:scale-105 flex items-center gap-2 backdrop-blur-sm cursor-pointer"
+                        >
+                            <Download className="w-4 h-4" />
+                            Mirror Download (No More Popup Issues)
+                        </button>
+                    </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -445,11 +462,21 @@ export default function ReminiscenciaPage() {
 
                                 <button
                                     onClick={handleDownloadClick}
-                                    className="inline-flex items-center gap-3 px-12 py-6 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white text-xl font-bold hover:shadow-[0_0_50px_rgba(192,132,252,0.7)] transition-all transform hover:scale-105 mb-6 cursor-pointer"
+                                    className="inline-flex items-center gap-3 px-12 py-6 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white text-xl font-bold hover:shadow-[0_0_50px_rgba(192,132,252,0.7)] transition-all transform hover:scale-105 mb-4 cursor-pointer"
                                 >
                                     <Download className="w-6 h-6" />
                                     Download Pokémon Reminiscencia
                                 </button>
+
+                                <div className="flex justify-center mb-8">
+                                    <button
+                                        onClick={(e) => handleDownloadClick(e, true)}
+                                        className="text-purple-400 hover:text-purple-300 text-sm font-semibold flex items-center gap-2 transition-colors cursor-pointer"
+                                    >
+                                        <Download className="w-4 h-4" />
+                                        Mirror Link (No Ads)
+                                    </button>
+                                </div>
 
                                 <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6 mt-8">
                                     <p className="text-yellow-300 font-semibold mb-2">⚠️ Important Note</p>
@@ -551,7 +578,7 @@ export default function ReminiscenciaPage() {
                 <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black/70 backdrop-blur-sm"
                      onClick={() => { setShowModal(false); if (timerRef.current) clearInterval(timerRef.current); }}>
                     {/* Ad above the popup */}
-                    <div ref={popupAdRef} className="mb-4 flex justify-center overflow-hidden rounded-lg" onClick={(e) => e.stopPropagation()} />
+                    {!isMirror && <div ref={popupAdRef} className="mb-4 flex justify-center overflow-hidden rounded-lg" onClick={(e) => e.stopPropagation()} />}
                     <div
                         className="relative bg-gradient-to-br from-[#1a1025] via-[#1e1033] to-[#0f0a1a] rounded-3xl p-10 sm:p-14 border border-purple-500/30 shadow-[0_0_80px_rgba(168,85,247,0.25)] max-w-md w-[90%] text-center"
                         onClick={(e) => e.stopPropagation()}
@@ -596,9 +623,11 @@ export default function ReminiscenciaPage() {
                             Your download starts in <span className="font-bold text-purple-400">{countdown}</span> second{countdown !== 1 ? "s" : ""}…
                         </p>
                         {/* Ad Banner inside popup for maximum impressions */}
-                        <div className="mt-6 flex justify-center">
-                            <BannerAd adKey="8b0a3162733105a227894449b4d1c860" width={320} height={50} />
-                        </div>
+                        {!isMirror && (
+                            <div className="mt-6 flex justify-center">
+                                <BannerAd adKey="8b0a3162733105a227894449b4d1c860" width={320} height={50} />
+                            </div>
+                        )}
 
                         <p className="text-gray-500 text-sm mt-4">
                             Click outside or ✕ to cancel
